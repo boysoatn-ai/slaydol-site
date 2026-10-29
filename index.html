@@ -3,68 +3,353 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Slayd Ol — taqdimot, referat va mustaqil ish tayyorlash</title>
-<meta name="description" content="Slayd Ol — talabalar uchun Telegram bot: taqdimot (PPTX, PDF), referat, mustaqil ish va boshqa o‘quv materiallarini tayyorlash xizmati.">
+<title>Slayd Ol — taqdimot, referat va mustaqil ish bir necha daqiqada</title>
+<meta name="description" content="Slayd Ol — talabalar va o‘quvchilar uchun Telegram bot. Mavzuni yozasiz — reja, matn, rasmlar va dizayn bilan tayyor PowerPoint (PPTX + PDF) taqdimot 5–10 daqiqada. Referat, mustaqil ish, HEMIS topshiriqlari ham.">
+<link rel="canonical" href="https://slaydol.uz/">
+<meta property="og:title" content="Slayd Ol — taqdimot bir necha daqiqada">
+<meta property="og:description" content="Mavzuni yozing — bot reja, matn, rasm va dizayn bilan tayyor taqdimot beradi. 130 dizayn, PPTX + PDF, reja va muqova bepul.">
+<meta property="og:image" content="https://slaydol.uz/img/og.jpg">
+<meta property="og:url" content="https://slaydol.uz/">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#070A1C">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%237C5CFF'/%3E%3Cstop offset='.55' stop-color='%232563EB'/%3E%3Cstop offset='1' stop-color='%231FC8DB'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='18' fill='url(%23g)'/%3E%3Crect x='14' y='17' width='36' height='24' rx='4' fill='none' stroke='%23fff' stroke-width='4'/%3E%3Crect x='22' y='30' width='5' height='7' rx='1' fill='%23fff'/%3E%3Crect x='30' y='24' width='5' height='13' rx='1' fill='%23fff'/%3E%3Crect x='38' y='27' width='5' height='10' rx='1' fill='%23fff'/%3E%3Cpath d='M32 41v6M24 50h16' stroke='%23fff' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Unbounded:wght@700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"Slayd Ol","url":"https://slaydol.uz/","logo":"https://slaydol.uz/img/og.jpg","sameAs":["https://t.me/slaydol_bot"]}
+</script>
 </head>
 <body>
+
 <header><div class="wrap">
-  <a class="logo" href="/">Slayd Ol</a>
-  <nav><a href="#xizmatlar">Xizmatlar va narxlar</a><a href="#tolov">To‘lov</a><a href="oferta.html">Oferta</a><a href="#aloqa">Aloqa</a></nav>
+  <a class="logo" href="/"><span class="mark"><svg width="20" height="20" viewBox="0 0 34 34"><rect x="3" y="5" width="28" height="19" rx="4" fill="none" stroke="#fff" stroke-width="3"/><rect x="9" y="15" width="4" height="5" rx="1" fill="#fff"/><rect x="15" y="11" width="4" height="9" rx="1" fill="#fff"/><rect x="21" y="13" width="4" height="7" rx="1" fill="#fff"/><path d="M17 24v5M11 31h12" stroke="#fff" stroke-width="3" stroke-linecap="round"/></svg></span>Slayd&nbsp;<b>Ol</b></a>
+  <nav id="nav">
+    <a href="#qanday">Qanday ishlaydi</a>
+    <a href="#imkoniyatlar">Imkoniyatlar</a>
+    <a href="#narxlar">Narxlar</a>
+    <a href="#namunalar">Namunalar</a>
+    <a href="#savollar">Savollar</a>
+    <a href="oferta.html">Oferta</a>
+  </nav>
+  <button class="burger" id="burger" aria-label="Menyu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0E1430" stroke-width="2.4" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  <a class="btn p s" href="https://t.me/slaydol_bot">Botni ochish</a>
 </div></header>
 
-<main class="wrap">
-  <h1>Taqdimot, referat va mustaqil ish — bir necha daqiqada</h1>
-  <p class="lead">Slayd Ol — talabalar va o‘qituvchilar uchun Telegram bot. Mavzuni yozasiz, bot reja tuzadi,
-    to‘lovdan keyin tayyor PowerPoint (PPTX) va PDF faylni yuboradi.</p>
-  <a class="btn" href="https://t.me/slaydol_bot">Telegram’da ochish — @slaydol_bot</a>
-
-  <h2 id="xizmatlar">Xizmatlar va narxlar</h2>
-  <p class="note">Narxlar so‘mda, QQS bilan. Har bir buyurtmaning aniq narxi to‘lovdan oldin botda ko‘rsatiladi va o‘sha narx amal qiladi.</p>
-  <table>
-    <tr><th>Xizmat</th><th>Nima kiradi</th><th>Narx</th></tr>
-    <tr><td>Taqdimot — Standart</td><td>12 slaydgacha, PPTX + PDF; har qo‘shimcha slayd +500</td><td class="p">8 900</td></tr>
-    <tr><td>Taqdimot — Premium</td><td>12 slaydgacha, kengaytirilgan matn, rasmlar, himoya savollari; qo‘shimcha slayd +600</td><td class="p">14 900</td></tr>
-    <tr><td>Taqdimot — VIP</td><td>12 slaydgacha, eksklyuziv dizayn, ma’ruza matni, himoya hujjati; qo‘shimcha slayd +1 500</td><td class="p">30 000</td></tr>
-    <tr><td>Referat / mustaqil ish</td><td>DOCX, 10 / 15 / 20 / 25 bet</td><td class="p">6 500 – 11 000</td></tr>
-    <tr><td>Kurs ishi</td><td>DOCX</td><td class="p">50 000 – 60 000</td></tr>
-    <tr><td>Bitiruv malakaviy ishi</td><td>DOCX</td><td class="p">80 000 – 100 000</td></tr>
-    <tr><td>Ilmiy maqola / tezis</td><td>DOCX</td><td class="p">3 000 – 7 000</td></tr>
-    <tr><td>Esse, xat, CV, krossvord va boshqa xizmatlar</td><td>DOCX</td><td class="p">1 000 – 5 000</td></tr>
-  </table>
-
-  <h2>Qanday ishlaydi</h2>
-  <ol>
-    <li>Telegram’da <a href="https://t.me/slaydol_bot">@slaydol_bot</a> ni oching va mavzuni yozing.</li>
-    <li>Bot til, slaydlar soni va rejani taklif qiladi — reja bepul ko‘riladi.</li>
-    <li>Variant va dizaynni tanlaysiz, narx ko‘rsatiladi.</li>
-    <li>Hisobni to‘ldirasiz va buyurtmani tasdiqlaysiz.</li>
-    <li>Tayyor fayl odatda 3–10 daqiqada shu chatga keladi.</li>
-  </ol>
-
-  <h2 id="tolov">To‘lov va pulni qaytarish</h2>
-  <div class="card">
-    <p>To‘lov bot ichida Payme yoki Click orqali, yoki bank kartasiga o‘tkazma bilan qabul qilinadi. To‘langan summa
-      foydalanuvchining bot ichidagi hisobiga tushadi, buyurtma narxi shu hisobdan yechiladi.</p>
-    <p>Agar buyurtma texnik sabab bilan bajarilmasa, pul avtomatik ravishda hisobga qaytariladi. Hisobdagi ishlatilmagan
-      mablag‘ni kartaga qaytarish uchun quyidagi aloqa orqali murojaat qiling — so‘rov <span class="todo">10</span> ish kuni ichida ko‘rib chiqiladi.</p>
-    <p>Batafsil: <a href="oferta.html">ommaviy oferta</a>.</p>
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="pill">✨ TELEGRAM BOT · 24/7</span>
+      <h1>Taqdimot <span class="goldtxt">5 daqiqada</span>. Mavzuni yozing — qolganini bot qiladi.</h1>
+      <p class="lead">Reja, matn, rasmlar, jadval-diagrammalar va dizayn — hammasi avtomatik. Tayyor PowerPoint (PPTX) va PDF fayl Telegram chatingizga keladi. Rejani va muqovani to‘lovdan oldin bepul ko‘rasiz.</p>
+      <div class="cta">
+        <a class="btn p" href="https://t.me/slaydol_bot"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M9.04 15.47 8.7 20.2c.48 0 .69-.21.94-.46l2.26-2.16 4.68 3.43c.86.47 1.47.22 1.7-.79l3.08-14.4c.28-1.26-.46-1.75-1.3-1.44L2.4 11.3c-1.23.48-1.21 1.17-.21 1.48l4.63 1.44L17.6 7.45c.5-.33.97-.15.59.18"/></svg>Telegram’da boshlash</a>
+        <a class="btn g" href="#namunalar">Namunalarni ko‘rish</a>
+      </div>
+      <div class="trust">
+        <div><b>130</b>dizayn</div>
+        <div><b>5–10</b>daqiqada tayyor</div>
+        <div><b>PPTX + PDF</b>ikkala format</div>
+        <div><b>0 so‘m</b>reja va muqova</div>
+      </div>
+    </div>
+    <div class="stack">
+      <img class="a" src="img/pv_01.jpg" alt="VIP taqdimot muqovasi — Kvadrat tenglama" width="1200" height="675" loading="eager">
+      <img class="b" src="img/pb_01.jpg" alt="Premium taqdimot muqovasi — O‘zbekiston turizmi" width="1200" height="675" loading="eager">
+      <img class="c" src="img/std_chart.jpg" alt="Standart taqdimot — grafik slaydi" width="1200" height="675" loading="eager">
+      <div class="hero-note"><span>●</span> Bot shu dizaynlarda tayyorlaydi</div>
+    </div>
   </div>
+  <div class="hero-bar"><div class="wrap">
+    <span>O‘zbek, rus va ingliz tilida</span><span>Maktab, kollej va universitet darajasida</span><span>O‘qituvchi talablari hisobga olinadi</span><span>Click va Payme orqali to‘lov</span>
+  </div></div>
+</section>
 
-  <h2 id="aloqa">Aloqa va rekvizitlar</h2>
-  <div class="card">
-    <p><b>Ijrochi:</b> <span class="todo">YaTT / MChJ nomi</span><br>
-       <b>STIR:</b> <span class="todo">000 000 000</span><br>
-       <b>Manzil:</b> <span class="todo">viloyat, shahar, ko‘cha, uy</span><br>
-       <b>Telefon:</b> <span class="todo">+998 __ ___ __ __</span><br>
-       <b>Telegram:</b> <a href="https://t.me/slaydol_bot">@slaydol_bot</a> («ℹ️ Yordam» → «✍️ Adminga yozish»)<br>
-       <b>Email:</b> <span class="todo">email</span><br>
-       <b>Ish vaqti:</b> bot 24/7, qo‘llab-quvvatlash har kuni 09:00–21:00</p>
+<!-- ============ QANDAY ISHLAYDI ============ -->
+<section class="sec" id="qanday">
+  <div class="wrap">
+    <span class="kicker">Qanday ishlaydi</span>
+    <h2>To‘rt qadam — va fayl qo‘lingizda</h2>
+    <p class="lead">Dasturchi bo‘lish shart emas. Hamma narsa oddiy Telegram chatida, tugmalar bilan.</p>
+    <div class="steps">
+      <div class="step"><h3>Mavzuni yozasiz</h3><p>«Fotosintez», «Amir Temur davlati», «Bank omonat turlari» — istalgan mavzu. Fayl yoki o‘qituvchi rejasini ham tashlasangiz bo‘ladi.</p></div>
+      <div class="step"><h3>Bot aniqlashtiradi</h3><p>Til, auditoriya, slaydlar soni va talablaringizni so‘raydi. Muqovaga ismingiz va o‘qituvchi ismini yozadi.</p></div>
+      <div class="step"><h3>Reja va muqovani ko‘rasiz</h3><p>Bepul. Reja yoqmasa — boshqasini so‘raysiz, mavzuga mos 3 ta dizayndan birini tanlaysiz.</p></div>
+      <div class="step"><h3>To‘lov — va tayyor</h3><p>Click yoki Payme orqali to‘laysiz, 5–10 daqiqada PPTX va PDF fayl chatga keladi. Tahrir — bepul.</p></div>
+    </div>
+    <div class="steps-visual">
+      <div class="chat">
+        <div class="m me">Fotosintez, 8-sinf, 12 slayd</div>
+        <div class="m bot"><b>Slayd Ol:</b> Tushunarli 👍 Mavzu: Fotosintez · O‘zbek tili · 8-sinf · 12 slayd. To‘g‘rimi?</div>
+        <div class="m me">Ha ✅</div>
+        <div class="m bot"><b>Slayd Ol:</b> Reja tayyor. Muqova ko‘rinishi 👇 Mos dizayn: «Maktab · Firuza». To‘lab boshlaymizmi?</div>
+        <div class="m me">To‘lash 💳</div>
+        <div class="m bot"><b>Slayd Ol:</b> ✅ Tayyor! Taqdimotingiz 12 slayd:</div>
+        <div class="file"><div class="fi pptx">PPTX</div><div><b>Fotosintez.pptx</b><small>4.8 MB · PowerPoint</small></div></div>
+        <div class="file"><div class="fi pdf">PDF</div><div><b>Fotosintez.pdf</b><small>2.1 MB · telefonda ochiladi</small></div></div>
+      </div>
+      <img src="img/preview.jpg" alt="Muqova ko‘rinishi — to‘lovdan oldin bepul ko‘rsatiladi" width="1100" height="954" loading="lazy">
+    </div>
   </div>
-</main>
+</section>
+
+<!-- ============ IMKONIYATLAR ============ -->
+<section class="sec alt" id="imkoniyatlar">
+  <div class="wrap">
+    <span class="kicker">Imkoniyatlar</span>
+    <h2>Oddiy «matnli slayd» emas — <span class="grad">to‘liq taqdimot</span></h2>
+    <p class="lead">Har slayd o‘z vazifasiga mos ko‘rinishda: jadval, diagramma, jarayon, vaqt chizig‘i, formula va yechim, test slaydi.</p>
+    <div class="feats">
+      <div class="feat"><div class="ic">🎨</div><h3>130 ta dizayn</h3><p>80 ta oddiy, 28 ta Premium va 22 ta VIP Exclusive. Bot mavzungizga mos 3 tasini o‘zi taklif qiladi — maktab uchun yumshoq, universitet uchun jiddiy.</p></div>
+      <div class="feat"><div class="ic">📊</div><h3>Jadval, grafik, sxema</h3><p>Taqqoslash jadvali, ustunli va chiziqli grafiklar, sabab-oqibat, ierarxiya, jarayon, vaqt chizig‘i, Venn — hammasi tahrirlanadigan PowerPoint shakllari.</p></div>
+      <div class="feat"><div class="ic">🖼</div><h3>Mavzuga mos rasmlar</h3><p>Registon, Navro‘z, laboratoriya, maktab hayoti — 500 dan ortiq O‘zbekiston muhitidagi rasmlar kutubxonasi va fotobank. Premium’da rasm maxsus chiziladi.</p></div>
+      <div class="feat"><div class="ic">📝</div><h3>O‘qituvchi talablari</h3><p>«Reja 5 banddan oshmasin», «manbalar kerak emas», «faqat ism yozilsin» — boshida yozasiz, bot hammasini hisobga oladi.</p></div>
+      <div class="feat"><div class="ic">🎤</div><h3>Himoyaga tayyorlanish</h3><p>Har slaydga nutq matni, himoyada beriladigan savollar va javoblar, oxirida tinglovchilar uchun test slaydi (QR-kod bilan jonli test).</p><span class="tag">Premium · VIP</span></div>
+      <div class="feat"><div class="ic">✏️</div><h3>Bepul tahrir</h3><p>Yoqmagan joyini yozasiz — bot o‘zgartiradi. Dizaynni almashtirish, slayd olib tashlash, rasm o‘zgartirish — bepul.</p></div>
+    </div>
+
+    <div class="wall" aria-hidden="true">
+      <div class="row"><img src="img/designs/gradient-ruby.jpg" alt="" loading="lazy"><img src="img/designs/pro-vip-dark.jpg" alt="" loading="lazy"><img src="img/designs/corporate-slate.jpg" alt="" loading="lazy"><img src="img/designs/pro-minimal.jpg" alt="" loading="lazy"><img src="img/designs/pro-vip-holo.jpg" alt="" loading="lazy"><img src="img/designs/pro-burgundy-modern.jpg" alt="" loading="lazy"><img src="img/designs/academic-indigo.jpg" alt="" loading="lazy"><img src="img/designs/pro-vip-alpine.jpg" alt="" loading="lazy"><img src="img/designs/gradient-ocean.jpg" alt="" loading="lazy"><img src="img/designs/pro-royal.jpg" alt="" loading="lazy"><img src="img/designs/sport-sunset.jpg" alt="" loading="lazy"><img src="img/designs/academic-emerald.jpg" alt="" loading="lazy"><img src="img/designs/sport-gold.jpg" alt="" loading="lazy"><img src="img/designs/minimal-forest.jpg" alt="" loading="lazy"><img src="img/designs/pro-vip-atelier.jpg" alt="" loading="lazy"><img src="img/designs/pro-meros-bronze.jpg" alt="" loading="lazy"><img src="img/designs/pro-zine.jpg" alt="" loading="lazy"><img src="img/designs/minimal-teal.jpg" alt="" loading="lazy"><img src="img/designs/vivid-slate.jpg" alt="" loading="lazy"><img src="img/designs/academic-forest.jpg" alt="" loading="lazy"><img src="img/designs/dark-violet.jpg" alt="" loading="lazy"><img src="img/designs/playful-gold.jpg" alt="" loading="lazy"><img src="img/designs/minimal-indigo.jpg" alt="" loading="lazy"><img src="img/designs/playful-slate.jpg" alt="" loading="lazy"><img src="img/designs/pro-mono.jpg" alt="" loading="lazy"><img src="img/designs/sport-ruby.jpg" alt="" loading="lazy"><img src="img/designs/pro-vip-art.jpg" alt="" loading="lazy"><img src="img/designs/pro-cinematic.jpg" alt="" loading="lazy"><img src="img/designs/corporate-ocean.jpg" alt="" loading="lazy"><img src="img/designs/dark-ruby.jpg" alt="" loading="lazy"><img src="img/designs/pro-meros-ivory.jpg" alt="" loading="lazy"><img src="img/designs/playful-sunset.jpg" alt="" loading="lazy"><img src="img/designs/dark-gold.jpg" alt="" loading="lazy"><img src="img/designs/pro-card.jpg" alt="" loading="lazy"><img src="img/designs/dark-emerald.jpg" alt="" loading="lazy"><img src="img/designs/minimal-ruby.jpg" alt="" loading="lazy"><img src="img/designs/academic-gold.jpg" alt="" loading="lazy"><img src="img/designs/minimal-gold.jpg" alt="" loading="lazy"><img src="img/designs/playful-forest.jpg" alt="" loading="lazy"><img src="img/designs/vivid-ocean.jpg" alt="" loading="lazy"><img src="img/designs/pro-architecture.jpg" alt="" loading="lazy"><img src="img/designs/corporate-emerald.jpg" alt="" loading="lazy"><img src="img/designs/pro-nature.jpg" alt="" loading="lazy"><img src="img/designs/gradient-gold.jpg" alt="" loading="lazy"><img src="img/designs/vivid-violet.jpg" alt="" loading="lazy"><img src="img/designs/sport-ocean.jpg" alt="" loading="lazy"><img src="img/designs/vivid-teal.jpg" alt="" loading="lazy"><img src="img/designs/pro-vip-academic.jpg" alt="" loading="lazy"><img src="img/designs/pro-vip-cosmos.jpg" alt="" loading="lazy"><img src="img/designs/pro-vip-3d.jpg" alt="" loading="lazy"><img src="img/designs/dark-forest.jpg" alt="" loading="lazy"><img src="img/designs/gradient-forest.jpg" alt="" loading="lazy"><img src="img/designs/gradient-indigo.jpg" alt="" loading="lazy"><img src="img/designs/pro-blueprint.jpg" alt="" loading="lazy"><img src="img/designs/gradient-slate.jpg" alt="" loading="lazy"><img src="img/designs/pro-vip-cinema.jpg" alt="" loading="lazy"><img src="img/designs/pro-bento.jpg" alt="" loading="lazy"><img src="img/designs/minimal-violet.jpg" alt="" loading="lazy"><img src="img/designs/minimal-ocean.jpg" alt="" loading="lazy"><img src="img/designs/pro-wabi.jpg" alt="" loading="lazy"><img src="img/designs/pro-vip-data.jpg" alt="" loading="lazy"><img src="img/designs/pro-type.jpg" alt="" loading="lazy"><img src="img/designs/corporate-violet.jpg" alt="" loading="lazy"><img src="img/designs/vivid-emerald.jpg" alt="" loading="lazy"><img src="img/designs/playful-teal.jpg" alt="" loading="lazy"><img src="img/designs/gradient-ruby.jpg" alt="" loading="lazy"><img src="img/designs/pro-vip-dark.jpg" alt="" loading="lazy"><img src="img/designs/corporate-slate.jpg" alt="" loading="lazy"><img src="img/designs/pro-minimal.jpg" alt="" loading="lazy"><img src="img/designs/pro-vip-holo.jpg" alt="" loading="lazy"><img src="img/designs/pro-burgundy-modern.jpg" alt="" loading="lazy"><img src="img/designs/academic-indigo.jpg" alt="" loading="lazy"><img src="img/designs/pro-vip-alpine.jpg" alt="" loading="lazy"><img src="img/designs/gradient-ocean.jpg" alt="" loading="lazy"><img src="img/designs/pro-royal.jpg" alt="" loading="lazy"><img src="img/designs/sport-sunset.jpg" alt="" loading="lazy"><img src="img/designs/academic-emerald.jpg" alt="" loading="lazy"><img src="img/designs/sport-gold.jpg" alt="" loading="lazy"><img src="img/designs/minimal-forest.jpg" alt="" loading="lazy"><img src="img/designs/pro-vip-atelier.jpg" alt="" loading="lazy"><img src="img/designs/pro-meros-bronze.jpg" alt="" loading="lazy"><img src="img/designs/pro-zine.jpg" alt="" loading="lazy"><img src="img/designs/minimal-teal.jpg" alt="" loading="lazy"><img src="img/designs/vivid-slate.jpg" alt="" loading="lazy"><img src="img/designs/academic-forest.jpg" alt="" loading="lazy"><img src="img/designs/dark-violet.jpg" alt="" loading="lazy"><img src="img/designs/playful-gold.jpg" alt="" loading="lazy"><img src="img/designs/minimal-indigo.jpg" alt="" loading="lazy"><img src="img/designs/playful-slate.jpg" alt="" loading="lazy"><img src="img/designs/pro-mono.jpg" alt="" loading="lazy"><img src="img/designs/sport-ruby.jpg" alt="" loading="lazy"><img src="img/designs/pro-vip-art.jpg" alt="" loading="lazy"><img src="img/designs/pro-cinematic.jpg" alt="" loading="lazy"><img src="img/designs/corporate-ocean.jpg" alt="" loading="lazy"><img src="img/designs/dark-ruby.jpg" alt="" loading="lazy"><img src="img/designs/pro-meros-ivory.jpg" alt="" loading="lazy"><img src="img/designs/playful-sunset.jpg" alt="" loading="lazy"><img src="img/designs/dark-gold.jpg" alt="" loading="lazy"><img src="img/designs/pro-card.jpg" alt="" loading="lazy"><img src="img/designs/dark-emerald.jpg" alt="" loading="lazy"><img src="img/designs/minimal-ruby.jpg" alt="" loading="lazy"><img src="img/designs/academic-gold.jpg" alt="" loading="lazy"><img src="img/designs/minimal-gold.jpg" alt="" loading="lazy"><img src="img/designs/playful-forest.jpg" alt="" loading="lazy"><img src="img/designs/vivid-ocean.jpg" alt="" loading="lazy"><img src="img/designs/pro-architecture.jpg" alt="" loading="lazy"><img src="img/designs/corporate-emerald.jpg" alt="" loading="lazy"><img src="img/designs/pro-nature.jpg" alt="" loading="lazy"><img src="img/designs/gradient-gold.jpg" alt="" loading="lazy"><img src="img/designs/vivid-violet.jpg" alt="" loading="lazy"><img src="img/designs/sport-ocean.jpg" alt="" loading="lazy"><img src="img/designs/vivid-teal.jpg" alt="" loading="lazy"><img src="img/designs/pro-vip-academic.jpg" alt="" loading="lazy"><img src="img/designs/pro-vip-cosmos.jpg" alt="" loading="lazy"><img src="img/designs/pro-vip-3d.jpg" alt="" loading="lazy"><img src="img/designs/dark-forest.jpg" alt="" loading="lazy"><img src="img/designs/gradient-forest.jpg" alt="" loading="lazy"><img src="img/designs/gradient-indigo.jpg" alt="" loading="lazy"><img src="img/designs/pro-blueprint.jpg" alt="" loading="lazy"><img src="img/designs/gradient-slate.jpg" alt="" loading="lazy"><img src="img/designs/pro-vip-cinema.jpg" alt="" loading="lazy"><img src="img/designs/pro-bento.jpg" alt="" loading="lazy"><img src="img/designs/minimal-violet.jpg" alt="" loading="lazy"><img src="img/designs/minimal-ocean.jpg" alt="" loading="lazy"><img src="img/designs/pro-wabi.jpg" alt="" loading="lazy"><img src="img/designs/pro-vip-data.jpg" alt="" loading="lazy"><img src="img/designs/pro-type.jpg" alt="" loading="lazy"><img src="img/designs/corporate-violet.jpg" alt="" loading="lazy"><img src="img/designs/vivid-emerald.jpg" alt="" loading="lazy"><img src="img/designs/playful-teal.jpg" alt="" loading="lazy"></div>
+      <div class="row r"><img src="img/designs/playful-violet.jpg" alt="" loading="lazy"><img src="img/designs/minimal-emerald.jpg" alt="" loading="lazy"><img src="img/designs/pro-vip-pop.jpg" alt="" loading="lazy"><img src="img/designs/vivid-gold.jpg" alt="" loading="lazy"><img src="img/designs/pro-brutal.jpg" alt="" loading="lazy"><img src="img/designs/dark-slate.jpg" alt="" loading="lazy"><img src="img/designs/pro-vip-glass.jpg" alt="" loading="lazy"><img src="img/designs/pro-vip-neon.jpg" alt="" loading="lazy"><img src="img/designs/sport-emerald.jpg" alt="" loading="lazy"><img src="img/designs/pro-vip-royal.jpg" alt="" loading="lazy"><img src="img/designs/vivid-forest.jpg" alt="" loading="lazy"><img src="img/designs/minimal-sunset.jpg" alt="" loading="lazy"><img src="img/designs/dark-ocean.jpg" alt="" loading="lazy"><img src="img/designs/pro-terminal.jpg" alt="" loading="lazy"><img src="img/designs/pro-vip-dream.jpg" alt="" loading="lazy"><img src="img/designs/corporate-indigo.jpg" alt="" loading="lazy"><img src="img/designs/dark-indigo.jpg" alt="" loading="lazy"><img src="img/designs/pro-vip-boutique.jpg" alt="" loading="lazy"><img src="img/designs/gradient-violet.jpg" alt="" loading="lazy"><img src="img/designs/pro-vip-eco.jpg" alt="" loading="lazy"><img src="img/designs/pro-vip-luxe.jpg" alt="" loading="lazy"><img src="img/designs/pro-couture.jpg" alt="" loading="lazy"><img src="img/designs/corporate-teal.jpg" alt="" loading="lazy"><img src="img/designs/sport-forest.jpg" alt="" loading="lazy"><img src="img/designs/gradient-sunset.jpg" alt="" loading="lazy"><img src="img/designs/corporate-sunset.jpg" alt="" loading="lazy"><img src="img/designs/pro-islamic.jpg" alt="" loading="lazy"><img src="img/designs/academic-ruby.jpg" alt="" loading="lazy"><img src="img/designs/pro-vip-kinetic.jpg" alt="" loading="lazy"><img src="img/designs/vivid-ruby.jpg" alt="" loading="lazy"><img src="img/designs/playful-emerald.jpg" alt="" loading="lazy"><img src="img/designs/pro-vip-heritage.jpg" alt="" loading="lazy"><img src="img/designs/pro-journal.jpg" alt="" loading="lazy"><img src="img/designs/vivid-indigo.jpg" alt="" loading="lazy"><img src="img/designs/sport-violet.jpg" alt="" loading="lazy"><img src="img/designs/vivid-sunset.jpg" alt="" loading="lazy"><img src="img/designs/pro-retro.jpg" alt="" loading="lazy"><img src="img/designs/dark-teal.jpg" alt="" loading="lazy"><img src="img/designs/corporate-ruby.jpg" alt="" loading="lazy"><img src="img/designs/pro-iso.jpg" alt="" loading="lazy"><img src="img/designs/sport-teal.jpg" alt="" loading="lazy"><img src="img/designs/playful-ocean.jpg" alt="" loading="lazy"><img src="img/designs/pro-glass.jpg" alt="" loading="lazy"><img src="img/designs/sport-indigo.jpg" alt="" loading="lazy"><img src="img/designs/gradient-emerald.jpg" alt="" loading="lazy"><img src="img/designs/academic-teal.jpg" alt="" loading="lazy"><img src="img/designs/playful-indigo.jpg" alt="" loading="lazy"><img src="img/designs/playful-ruby.jpg" alt="" loading="lazy"><img src="img/designs/corporate-forest.jpg" alt="" loading="lazy"><img src="img/designs/academic-ocean.jpg" alt="" loading="lazy"><img src="img/designs/dark-sunset.jpg" alt="" loading="lazy"><img src="img/designs/pro-burgundy-gold.jpg" alt="" loading="lazy"><img src="img/designs/sport-slate.jpg" alt="" loading="lazy"><img src="img/designs/academic-sunset.jpg" alt="" loading="lazy"><img src="img/designs/pro-luxury.jpg" alt="" loading="lazy"><img src="img/designs/minimal-slate.jpg" alt="" loading="lazy"><img src="img/designs/corporate-gold.jpg" alt="" loading="lazy"><img src="img/designs/pro-consulting.jpg" alt="" loading="lazy"><img src="img/designs/pro-vip-ocean.jpg" alt="" loading="lazy"><img src="img/designs/academic-violet.jpg" alt="" loading="lazy"><img src="img/designs/academic-slate.jpg" alt="" loading="lazy"><img src="img/designs/pro-swiss.jpg" alt="" loading="lazy"><img src="img/designs/pro-vip-islamic.jpg" alt="" loading="lazy"><img src="img/designs/gradient-teal.jpg" alt="" loading="lazy"><img src="img/designs/pro-soft3d.jpg" alt="" loading="lazy"><img src="img/designs/playful-violet.jpg" alt="" loading="lazy"><img src="img/designs/minimal-emerald.jpg" alt="" loading="lazy"><img src="img/designs/pro-vip-pop.jpg" alt="" loading="lazy"><img src="img/designs/vivid-gold.jpg" alt="" loading="lazy"><img src="img/designs/pro-brutal.jpg" alt="" loading="lazy"><img src="img/designs/dark-slate.jpg" alt="" loading="lazy"><img src="img/designs/pro-vip-glass.jpg" alt="" loading="lazy"><img src="img/designs/pro-vip-neon.jpg" alt="" loading="lazy"><img src="img/designs/sport-emerald.jpg" alt="" loading="lazy"><img src="img/designs/pro-vip-royal.jpg" alt="" loading="lazy"><img src="img/designs/vivid-forest.jpg" alt="" loading="lazy"><img src="img/designs/minimal-sunset.jpg" alt="" loading="lazy"><img src="img/designs/dark-ocean.jpg" alt="" loading="lazy"><img src="img/designs/pro-terminal.jpg" alt="" loading="lazy"><img src="img/designs/pro-vip-dream.jpg" alt="" loading="lazy"><img src="img/designs/corporate-indigo.jpg" alt="" loading="lazy"><img src="img/designs/dark-indigo.jpg" alt="" loading="lazy"><img src="img/designs/pro-vip-boutique.jpg" alt="" loading="lazy"><img src="img/designs/gradient-violet.jpg" alt="" loading="lazy"><img src="img/designs/pro-vip-eco.jpg" alt="" loading="lazy"><img src="img/designs/pro-vip-luxe.jpg" alt="" loading="lazy"><img src="img/designs/pro-couture.jpg" alt="" loading="lazy"><img src="img/designs/corporate-teal.jpg" alt="" loading="lazy"><img src="img/designs/sport-forest.jpg" alt="" loading="lazy"><img src="img/designs/gradient-sunset.jpg" alt="" loading="lazy"><img src="img/designs/corporate-sunset.jpg" alt="" loading="lazy"><img src="img/designs/pro-islamic.jpg" alt="" loading="lazy"><img src="img/designs/academic-ruby.jpg" alt="" loading="lazy"><img src="img/designs/pro-vip-kinetic.jpg" alt="" loading="lazy"><img src="img/designs/vivid-ruby.jpg" alt="" loading="lazy"><img src="img/designs/playful-emerald.jpg" alt="" loading="lazy"><img src="img/designs/pro-vip-heritage.jpg" alt="" loading="lazy"><img src="img/designs/pro-journal.jpg" alt="" loading="lazy"><img src="img/designs/vivid-indigo.jpg" alt="" loading="lazy"><img src="img/designs/sport-violet.jpg" alt="" loading="lazy"><img src="img/designs/vivid-sunset.jpg" alt="" loading="lazy"><img src="img/designs/pro-retro.jpg" alt="" loading="lazy"><img src="img/designs/dark-teal.jpg" alt="" loading="lazy"><img src="img/designs/corporate-ruby.jpg" alt="" loading="lazy"><img src="img/designs/pro-iso.jpg" alt="" loading="lazy"><img src="img/designs/sport-teal.jpg" alt="" loading="lazy"><img src="img/designs/playful-ocean.jpg" alt="" loading="lazy"><img src="img/designs/pro-glass.jpg" alt="" loading="lazy"><img src="img/designs/sport-indigo.jpg" alt="" loading="lazy"><img src="img/designs/gradient-emerald.jpg" alt="" loading="lazy"><img src="img/designs/academic-teal.jpg" alt="" loading="lazy"><img src="img/designs/playful-indigo.jpg" alt="" loading="lazy"><img src="img/designs/playful-ruby.jpg" alt="" loading="lazy"><img src="img/designs/corporate-forest.jpg" alt="" loading="lazy"><img src="img/designs/academic-ocean.jpg" alt="" loading="lazy"><img src="img/designs/dark-sunset.jpg" alt="" loading="lazy"><img src="img/designs/pro-burgundy-gold.jpg" alt="" loading="lazy"><img src="img/designs/sport-slate.jpg" alt="" loading="lazy"><img src="img/designs/academic-sunset.jpg" alt="" loading="lazy"><img src="img/designs/pro-luxury.jpg" alt="" loading="lazy"><img src="img/designs/minimal-slate.jpg" alt="" loading="lazy"><img src="img/designs/corporate-gold.jpg" alt="" loading="lazy"><img src="img/designs/pro-consulting.jpg" alt="" loading="lazy"><img src="img/designs/pro-vip-ocean.jpg" alt="" loading="lazy"><img src="img/designs/academic-violet.jpg" alt="" loading="lazy"><img src="img/designs/academic-slate.jpg" alt="" loading="lazy"><img src="img/designs/pro-swiss.jpg" alt="" loading="lazy"><img src="img/designs/pro-vip-islamic.jpg" alt="" loading="lazy"><img src="img/designs/gradient-teal.jpg" alt="" loading="lazy"><img src="img/designs/pro-soft3d.jpg" alt="" loading="lazy"></div>
+    </div>
+    <p class="note center">130 dizayn — oddiy, Premium va VIP Exclusive. Hammasi haqiqiy taqdimotlardan.</p>
+  </div>
+</section>
+
+<!-- ============ NARXLAR ============ -->
+<section class="sec" id="narxlar">
+  <div class="wrap">
+    <span class="kicker">Narxlar</span>
+    <h2>Uch variant — har xil vazifa uchun</h2>
+    <p class="lead">Narxlar 12 slaydgacha. Aniq narx to‘lovdan oldin botda ko‘rsatiladi va o‘sha narx amal qiladi. Reja va muqova — bepul.</p>
+    <div class="plans">
+      <div class="plan">
+        <img class="plan-img" src="img/cov_go.jpg" alt="Standart taqdimot muqovasi" loading="lazy">
+        <h3>Standart</h3>
+        <p class="for">Oddiy dars, seminar va mustaqil ish taqdimoti uchun</p>
+        <div class="price">8 900 <small>so‘m</small></div>
+        <div class="first">🔥 Birinchi buyurtma — <s>8 900</s> 6 900 so‘m</div>
+        <div class="extra">Har qo‘shimcha slayd +500 so‘m</div>
+        <ul>
+          <li>80 ta dizayn + 10 ta ochiq Premium dizayn</li>
+          <li>Jadval, grafik, sxema va ikonkalar</li>
+          <li>4 tagacha mavzuga mos rasm</li>
+          <li>Reja, test slaydi, manbalar</li>
+          <li>PPTX + PDF, bepul tahrir</li>
+        </ul>
+        <a class="btn o" href="https://t.me/slaydol_bot">Standart tanlash</a>
+      </div>
+      <div class="plan hot">
+        <span class="badge">Eng ko‘p tanlanadi</span>
+        <img class="plan-img" src="img/pb_05.jpg" alt="Premium taqdimot slaydi" loading="lazy">
+        <h3>Premium</h3>
+        <p class="for">Himoyaga tayyor to‘plam: slayd + nutq + savol-javoblar</p>
+        <div class="price">14 900 <small>so‘m</small></div>
+        <div class="extra">Har qo‘shimcha slayd +600 so‘m</div>
+        <ul>
+          <li>28 ta Premium dizayn, butun slaydli rasmlar</li>
+          <li>Maxsus chizilgan muqova + 8 tagacha rasm</li>
+          <li>Kuchliroq matn (chuqur tadqiqot, manbalar bilan)</li>
+          <li>Har slaydga nutq matni va himoya savollari</li>
+          <li>3D oltin ikonkalar, bo‘lim varaqlari</li>
+        </ul>
+        <a class="btn p" href="https://t.me/slaydol_bot">Premium tanlash</a>
+      </div>
+      <div class="plan vip">
+        <span class="badge">👑 Exclusive</span>
+        <img class="plan-img" src="img/pv_01.jpg" alt="VIP taqdimot muqovasi" loading="lazy">
+        <h3>VIP</h3>
+        <p class="for">Bitiruv ishi, tanlov va muhim himoyalar uchun</p>
+        <div class="price">30 000 <small>so‘m</small></div>
+        <div class="extra">Har qo‘shimcha slayd +1 500 so‘m</div>
+        <ul>
+          <li>22 ta VIP Exclusive dizayn</li>
+          <li>Muqova va har bo‘lim uchun maxsus chizilgan rasm</li>
+          <li>Eng kuchli model: 5–7 daqiqalik ma’ruza matni</li>
+          <li>Himoya hujjati — 20 savol-javob (DOCX)</li>
+          <li>2 ta dizayn varianti, navbatsiz</li>
+        </ul>
+        <a class="btn o" href="https://t.me/slaydol_bot">VIP tanlash</a>
+      </div>
+    </div>
+
+    <h3 style="margin-top:56px">Boshqa xizmatlar</h3>
+    <table>
+      <tr><th>Xizmat</th><th>Nima beriladi</th><th>Narx</th></tr>
+      <tr><td>Referat / mustaqil ish</td><td>DOCX, titul varag‘i, reja, manbalar · 10 / 15 / 20 / 25 bet</td><td class="p">6 500 – 11 000</td></tr>
+      <tr><td>🎓 HEMIS topshirig‘i</td><td>Topshiriq skrinshotini yuborasiz — bot turini aniqlab, talablar bo‘yicha bajaradi (referat, sxema, klaster, jadval, test, Excel)</td><td class="p">5 000 dan</td></tr>
+      <tr><td>Kurs ishi</td><td>DOCX, 30–40 bet, haqiqiy manbalar bilan</td><td class="p">50 000 – 60 000</td></tr>
+      <tr><td>Bitiruv malakaviy ishi</td><td>DOCX, 50–60 bet</td><td class="p">80 000 – 100 000</td></tr>
+      <tr><td>Ilmiy maqola / tezis</td><td>DOCX, manbalar bilan</td><td class="p">3 000 – 7 000</td></tr>
+      <tr><td>Esse, motivatsion xat, CV, IELTS Writing</td><td>DOCX</td><td class="p">3 000 – 5 000</td></tr>
+      <tr><td>Masala yechish, krossvord, kitob konspekti</td><td>Rasm yoki fayl yuborasiz</td><td class="p">1 000 – 3 000</td></tr>
+      <tr><td>📸 Testdan quiz</td><td>Test rasmini yuborasiz — savollar va javoblar, do‘stlar bilan o‘ynaladigan quiz</td><td class="p">3 ta javob bepul</td></tr>
+    </table>
+    <p class="note">Narxlar so‘mda. 10 ta do‘st taklif qilsangiz — bitta Standart taqdimot bepul, 5 ta do‘st — 50% chegirma.</p>
+  </div>
+</section>
+
+<!-- ============ NAMUNALAR ============ -->
+<section class="sec alt" id="namunalar">
+  <div class="wrap">
+    <span class="kicker">Namunalar</span>
+    <h2>Bot aynan shunday tayyorlaydi</h2>
+    <p class="lead">Quyidagilar botning o‘zi yasagan haqiqiy slaydlar — qo‘lda tuzatilmagan. Bosib kattalashtiring.</p>
+    <div class="tabs" id="tabs">
+      <button class="tab on" data-g="std">Standart</button>
+      <button class="tab" data-g="pro">Premium</button>
+      <button class="tab" data-g="vip">VIP Exclusive</button>
+    </div>
+    <div class="gal" id="gal">
+      <figure data-g="std"><img src="img/cov_ai.jpg" alt="" loading="lazy"><figcaption>Standart · muqova (Akademik · Indigo)</figcaption></figure>
+      <figure data-g="std"><img src="img/std_table.jpg" alt="" loading="lazy"><figcaption>Standart · taqqoslash jadvali</figcaption></figure>
+      <figure data-g="std"><img src="img/std_chart.jpg" alt="" loading="lazy"><figcaption>Standart · grafik</figcaption></figure>
+      <figure data-g="std"><img src="img/std_cards.jpg" alt="" loading="lazy"><figcaption>Standart · kartalar va ikonkalar</figcaption></figure>
+      <figure data-g="std"><img src="img/std_formula.jpg" alt="" loading="lazy"><figcaption>Standart · formula va yechim</figcaption></figure>
+      <figure data-g="std"><img src="img/std_flow.jpg" alt="" loading="lazy"><figcaption>Standart · blok-sxema</figcaption></figure>
+      <figure data-g="pro" hidden><img src="img/pb_01.jpg" alt="" loading="lazy"><figcaption>Premium · muqova (Burgundy Gold)</figcaption></figure>
+      <figure data-g="pro" hidden><img src="img/pb_03.jpg" alt="" loading="lazy"><figcaption>Premium · butun slaydli rasm</figcaption></figure>
+      <figure data-g="pro" hidden><img src="img/pb_05.jpg" alt="" loading="lazy"><figcaption>Premium · jarayon</figcaption></figure>
+      <figure data-g="pro" hidden><img src="img/pb_06.jpg" alt="" loading="lazy"><figcaption>Premium · bo‘lim varag‘i</figcaption></figure>
+      <figure data-g="pro" hidden><img src="img/pb_12.jpg" alt="" loading="lazy"><figcaption>Premium · kartalar, oltin ikonkalar</figcaption></figure>
+      <figure data-g="pro" hidden><img src="img/pb_17.jpg" alt="" loading="lazy"><figcaption>Premium · yakuniy slayd</figcaption></figure>
+      <figure data-g="vip" hidden><img src="img/pv_01.jpg" alt="" loading="lazy"><figcaption>VIP · muqova (Royal)</figcaption></figure>
+      <figure data-g="vip" hidden><img src="img/pv_07.jpg" alt="" loading="lazy"><figcaption>VIP · bo‘lim ochilishi</figcaption></figure>
+      <figure data-g="vip" hidden><img src="img/pv_16.jpg" alt="" loading="lazy"><figcaption>VIP · «Rahmat» slaydi</figcaption></figure>
+      <figure data-g="vip" hidden><img src="img/vip_heritage.jpg" alt="" loading="lazy"><figcaption>VIP Exclusive · Heritage</figcaption></figure>
+      <figure data-g="vip" hidden><img src="img/vip_cosmos.jpg" alt="" loading="lazy"><figcaption>VIP Exclusive · Cosmos</figcaption></figure>
+      <figure data-g="vip" hidden><img src="img/vip_islamic.jpg" alt="" loading="lazy"><figcaption>VIP Exclusive · Islamic</figcaption></figure>
+    </div>
+
+    <div id="works-wrap" hidden>
+      <h3 style="margin-top:56px">Oxirgi tayyorlangan ishlar</h3>
+      <p class="note" style="margin-top:4px">Har soatda yangilanadi. Foydalanuvchilarning ismi ko‘rsatilmaydi.</p>
+      <div class="works" id="works"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ XIZMATLAR ============ -->
+<section class="sec" id="xizmatlar">
+  <div class="wrap">
+    <span class="kicker">Faqat taqdimot emas</span>
+    <h2>Referat, mustaqil ish va HEMIS — shu botda</h2>
+    <div class="svcs">
+      <div class="svc-list">
+        <div class="svc"><div class="e">📚</div><div><b>Referat va mustaqil ish</b><span>Titul varag‘i, reja, 10–25 bet matn, manbalar. O‘z rejangizni yuborsangiz, bandlar aynan saqlanadi.</span></div><div class="pr">6 500 dan</div></div>
+        <div class="svc"><div class="e">🎓</div><div><b>HEMIS topshirig‘i</b><span>Topshiriq skrinshotini yuborasiz — bot turini aniqlaydi, talablar ro‘yxatini ko‘rsatadi va o‘sha talablar bo‘yicha bajaradi. Muddatni eslatadi.</span></div><div class="pr">5 000 dan</div></div>
+        <div class="svc"><div class="e">🎤</div><div><b>Himoyaga tayyorlanish</b><span>Taqdimot bo‘yicha nutq matni va 20 ta savol-javob — DOCX faylda.</span></div><div class="pr">Premium’da bepul</div></div>
+        <div class="svc"><div class="e">📸</div><div><b>Testdan quiz</b><span>Test rasmini yuborasiz — bot savollarni o‘qib, do‘stlar bilan o‘ynaladigan quiz yasaydi. 3 ta javob bepul.</span></div><div class="pr">bepul dan</div></div>
+        <div class="svc"><div class="e">✍️</div><div><b>Esse, maqola, krossvord, masala</b><span>Esse va motivatsion xat, ilmiy maqola va tezis, krossvord, rasmdagi masala yechimi.</span></div><div class="pr">1 000 dan</div></div>
+      </div>
+      <div class="docs">
+        <img src="img/doc_referat.jpg" alt="Referat titul varag‘i namunasi" loading="lazy">
+        <img src="img/doc_hemis.jpg" alt="HEMIS topshirig‘i — klaster va sxema" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ISHONCH / TO'LOV ============ -->
+<section class="sec alt" id="tolov">
+  <div class="wrap">
+    <span class="kicker">Ishonch va to‘lov</span>
+    <h2>Avval ko‘rasiz, keyin to‘laysiz</h2>
+    <div class="trust3">
+      <div class="t3"><div class="e">👀</div><h3>Reja va muqova bepul</h3><p>Pul yechilishidan oldin rejani, muqova ko‘rinishini va aniq narxni ko‘rasiz. Yoqmasa — boshqa reja yoki dizayn.</p></div>
+      <div class="t3"><div class="e">↩️</div><h3>Pul hisobga qaytadi</h3><p>Buyurtma texnik sabab bilan bajarilmasa, summa avtomatik hisobingizga qaytariladi. Xato bo‘lsa — admin tuzatib beradi.</p></div>
+      <div class="t3"><div class="e">🔒</div><h3>Ma’lumotlar maxfiy</h3><p>Taqdimotingiz faqat sizga yuboriladi. Ismingiz va guruhingiz hech qayerda e’lon qilinmaydi.</p></div>
+    </div>
+    <div class="pay"><span>💳 Click</span><span>💳 Payme</span><span>🏦 Karta orqali o‘tkazma</span><span>🎁 Do‘st taklifi — bepul taqdimot</span></div>
+    <p class="note">To‘langan summa bot ichidagi hisobingizga tushadi, buyurtma narxi shu hisobdan yechiladi. Ishlatilmagan mablag‘ni qaytarish — <a href="oferta.html">oferta</a> bo‘yicha.</p>
+  </div>
+</section>
+
+<!-- ============ SAVOLLAR ============ -->
+<section class="sec" id="savollar">
+  <div class="wrap">
+    <span class="kicker">Savol-javob</span>
+    <h2>Ko‘p so‘raladigan savollar</h2>
+    <div class="faq">
+      <details><summary>Taqdimot qancha vaqtda tayyor bo‘ladi?</summary><p>Standart odatda 3–7 daqiqada, Premium va VIP 7–15 daqiqada. Jarayon foizlarda ko‘rsatib boriladi. VIP buyurtmalar navbatsiz bajariladi.</p></details>
+      <details><summary>Faylni telefonda ochib bo‘ladimi?</summary><p>Ha. PDF har qanday telefonda ochiladi, PPTX — PowerPoint, Google Slides, WPS yoki Keynote’da. Ikkala fayl ham chatga keladi.</p></details>
+      <details><summary>O‘qituvchim bergan rejaga aynan mos bo‘ladimi?</summary><p>Rejani matn, rasm yoki fayl ko‘rinishida yuboring — bandlar aynan saqlanadi, har bandga kamida bitta slayd. Boshida «Talablar» qadamida qo‘shimcha shartlarni ham yozasiz.</p></details>
+      <details><summary>Tayyor taqdimotni o‘zgartirsa bo‘ladimi?</summary><p>Ha, fayl ostidagi «✏️ Tahrir» tugmasi orqali: «3-slaydga rasm qo‘sh», «rejani qisqartir», «ismni o‘zgartir» kabi so‘rovlar. Birinchi tahrir bepul. PPTX faylni o‘zingiz ham PowerPoint’da tahrirlashingiz mumkin — hamma element tahrirlanadi.</p></details>
+      <details><summary>Rus yoki ingliz tilida tayyorlaydimi?</summary><p>Ha. Mavzuni qaysi tilda yozsangiz, bot shu tilni taklif qiladi; «O‘zgartirish» orqali boshqa tilni tanlasangiz bo‘ladi. Bot interfeysi o‘zbek va rus tilida.</p></details>
+      <details><summary>Pulni qanday to‘layman?</summary><p>Bot ichida «💳 Hisob» → Click yoki Payme — bir zumda. Yoki karta orqali o‘tkazma qilib, chekni yuborasiz — admin tasdiqlaydi. Eng kam to‘ldirish 1 000 so‘m.</p></details>
+      <details><summary>Mening ishim boshqa birovnikiga o‘xshab qolmaydimi?</summary><p>Har taqdimot mavzu, auditoriya va sizning talablaringiz bo‘yicha yangidan yoziladi. Dizayn 130 tadan tanlanadi, rasmlar mavzuga qarab tanlanadi yoki chiziladi.</p></details>
+      <details><summary>Bepul sinab ko‘rsa bo‘ladimi?</summary><p>Reja, muqova ko‘rinishi va narx — bepul. Birinchi Standart taqdimot 6 900 so‘m. 10 ta do‘stingizni taklif qilsangiz, bitta Standart taqdimot bepul beriladi.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="sec" style="padding-top:0">
+  <div class="wrap">
+    <div class="cta-big">
+      <h2>Sessiya yaqin. Taqdimotni bugun tayyorlang.</h2>
+      <p>Telegram’da @slaydol_bot ni oching va mavzuni yozing. Reja va muqovani bepul ko‘rasiz — keyin qaror qilasiz.</p>
+      <a class="btn p" href="https://t.me/slaydol_bot"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M9.04 15.47 8.7 20.2c.48 0 .69-.21.94-.46l2.26-2.16 4.68 3.43c.86.47 1.47.22 1.7-.79l3.08-14.4c.28-1.26-.46-1.75-1.3-1.44L2.4 11.3c-1.23.48-1.21 1.17-.21 1.48l4.63 1.44L17.6 7.45c.5-.33.97-.15.59.18"/></svg>@slaydol_bot ni ochish</a>
+      <div><div class="qr"><img src="img/qr.png" width="140" height="140" alt="QR — t.me/slaydol_bot" loading="lazy"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ALOQA ============ -->
+<section class="sec alt" id="aloqa" style="padding-top:60px">
+  <div class="wrap">
+    <span class="kicker">Aloqa</span>
+    <h2>Savol bo‘lsa — yozing</h2>
+    <div class="card">
+      <p><b>Telegram:</b> <a href="https://t.me/slaydol_bot">@slaydol_bot</a> → «ℹ️ Yordam» → «✍️ Adminga yozish» (javob 09:00–21:00)</p>
+      <p><b>Ijrochi:</b> <span class="todo">YaTT / MChJ nomi</span> · <b>STIR:</b> <span class="todo">000 000 000</span></p>
+      <p><b>Manzil:</b> <span class="todo">viloyat, shahar, ko‘cha, uy</span> · <b>Telefon:</b> <span class="todo">+998 __ ___ __ __</span> · <b>Email:</b> <span class="todo">email</span></p>
+      <p>Bot 24/7 ishlaydi. <a href="oferta.html">Ommaviy oferta</a>.</p>
+    </div>
+  </div>
+</section>
 
 <footer><div class="wrap">
-  © 2026 Slayd Ol · <a href="oferta.html">Ommaviy oferta</a> · <a href="https://t.me/slaydol_bot">@slaydol_bot</a>
+  <a class="logo" href="/"><span class="mark"><svg width="20" height="20" viewBox="0 0 34 34"><rect x="3" y="5" width="28" height="19" rx="4" fill="none" stroke="#fff" stroke-width="3"/><rect x="9" y="15" width="4" height="5" rx="1" fill="#fff"/><rect x="15" y="11" width="4" height="9" rx="1" fill="#fff"/><rect x="21" y="13" width="4" height="7" rx="1" fill="#fff"/><path d="M17 24v5M11 31h12" stroke="#fff" stroke-width="3" stroke-linecap="round"/></svg></span>Slayd&nbsp;<b>Ol</b></a>
+  <div>© 2026 Slayd Ol · <a href="oferta.html">Ommaviy oferta</a> · <a href="https://t.me/slaydol_bot">@slaydol_bot</a></div>
 </div></footer>
+
+<dialog class="lb" id="lb"><img id="lbimg" src="" alt=""><button id="lbx" aria-label="Yopish">×</button></dialog>
+
+<script>
+(function(){
+  var b=document.getElementById('burger'),n=document.getElementById('nav');
+  b.onclick=function(){n.classList.toggle('open')};
+  n.addEventListener('click',function(e){if(e.target.tagName==='A')n.classList.remove('open')});
+  // namunalar tablari
+  var tabs=document.querySelectorAll('.tab'),figs=document.querySelectorAll('#gal figure');
+  tabs.forEach(function(t){t.onclick=function(){
+    tabs.forEach(function(x){x.classList.toggle('on',x===t)});
+    figs.forEach(function(f){f.hidden=f.dataset.g!==t.dataset.g});
+  }});
+  // kattalashtirish
+  var lb=document.getElementById('lb'),li=document.getElementById('lbimg');
+  document.addEventListener('click',function(e){
+    var f=e.target.closest('#gal figure, .work .imgs');if(!f)return;
+    var im=e.target.closest('img')||f.querySelector('img');li.src=im.src;lb.showModal();
+  });
+  document.getElementById('lbx').onclick=function(){lb.close()};
+  lb.onclick=function(e){if(e.target===lb)lb.close()};
+  // oxirgi ishlar (galereya ma'lumoti, har soatda yangilanadi)
+  var base='https://boysoatn-ai.github.io/slaydbot-app/works/';
+  fetch(base+'data.json').then(function(r){return r.json()}).then(function(d){
+    var items=(d.items||[]).filter(function(w){return w.images&&w.images.length>=3}).slice(0,6);
+    if(!items.length)return;
+    var tier={std:'Standart',pro:'Premium',vip:'VIP'};
+    document.getElementById('works').innerHTML=items.map(function(w){
+      return '<div class="work"><div class="imgs">'+w.images.slice(0,3).map(function(s){return '<img src="'+base+s+'" alt="" loading="lazy">'}).join('')+
+        '</div><div class="t"><b>'+String(w.topic||'').replace(/[<>&]/g,'')+'</b><em class="'+w.tier+'">'+(tier[w.tier]||'')+'</em><span>'+(w.slides||'')+' slayd · '+(w.theme_label||'')+'</span></div></div>';
+    }).join('');
+    document.getElementById('works-wrap').hidden=false;
+  }).catch(function(){});
+})();
+</script>
 </body>
 </html>
